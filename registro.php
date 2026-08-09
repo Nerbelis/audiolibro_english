@@ -3,7 +3,7 @@ include 'conexion.php';
 
 $mensaje = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim($_POST['nombre']);
     $email = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
