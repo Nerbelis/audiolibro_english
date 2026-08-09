@@ -47,10 +47,10 @@ if (isset($_GET['aprobar_id'])) {
         $stmt_up->close();
 
        // B) Dar de alta el acceso al módulo en la tabla 'accesos_modulos'
-        $stmt_acc = $conexion->prepare("INSERT INTO accesos_modulos (usuario_id, numero_modulo, estado) VALUES (?, ?, 'aprobado') ON DUPLICATE KEY UPDATE estado = 'aprobado'");
-        $stmt_acc->bind_param("ii", $id_cliente, $num_modulo);
-        $stmt_acc->execute();
-        $stmt_acc->close();
+       $stmt_acc = $conexion->prepare("UPDATE accesos_modulos SET estado = 'aprobado' WHERE usuario_id = ? AND numero_modulo = ?");
+       $stmt_acc->bind_param("ii", $id_cliente, $num_modulo);
+       $stmt_acc->execute();
+       $stmt_acc->close();
 
         $mensaje_alerta = "¡Pago aprobado con éxito! El módulo ha sido desbloqueado.";
         $tipo_alerta = "exito";
