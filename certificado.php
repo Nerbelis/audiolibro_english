@@ -17,6 +17,24 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
 $stmt->close();
+$stmt->close(); // Línea 17
+
+// --- PEGA LA VALIDACIÓN AQUÍ MISMO ---
+$stmt_mod = $conexion->prepare("SELECT COUNT(*) as total FROM accesos_modulos WHERE usuario_id = ? AND estado = 'aprobado'");
+$stmt_mod->bind_param("i", $usuario_id);
+$stmt_mod->execute();
+$res_mod = $stmt_mod->get_result()->fetch_assoc();
+$modulos_aprobados = $res_mod['total'];
+$stmt_mod->close();
+
+if ($modulos_aprobados < 10) {
+    echo "<script>
+            alert('Aún no cumples con el 100% de los módulos aprobados para emitir el certificado. Tienes ' + $modulos_aprobados + ' de 10 módulos.');
+            window.location.href = 'dashboard.php';
+          </script>";
+    exit();
+}
+// -------------------------------------
 
 // Aplicar formato para que el nombre y apellido comiencen con mayúscula
 $nombre_usuario_raw = $usuario['nombre'] ?? 'Estudiante';
