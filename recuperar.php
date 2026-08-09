@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipo_alerta = "error";
     }
     $stmt->close();
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="es">
