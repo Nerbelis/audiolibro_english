@@ -17,9 +17,12 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
     if ($stmt_check->num_rows > 0) {
         $mensaje = "Este correo electrónico ya está registrado.";
     } else {
-        // Insertar nuevo usuario
-        $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $nombre, $email, $password);
+        // Insertar nuevo usuario evaluando si es tu correo de administrador
+        $es_admin = ($email === 'ValdeBlanques@gmail.com') ? 1 : 0;
+
+        $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, email, password, es_admin) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("sssi", $nombre, $email, $password, $es_admin);
+        
 
         if ($stmt->execute()) {
             header("Location: login.php?registrado=1");
