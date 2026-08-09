@@ -312,10 +312,13 @@ $actual = isset($modulos[$id_modulo]) ? $modulos[$id_modulo] : $modulos[1];
     <div class="box">
         <h3>1. Las 10 Palabras Clave y su Fonética</h3>
         <div class="grid-list">
-            <?php foreach($actual['palabras'] as $palabra): ?>
-                <div class="list-item"><?php echo $palabra; ?></div>
-            <?php endforeach; ?>
+    <?php foreach($actual['palabras'] as $palabra): ?>
+        <div class="list-item" style="display: flex; justify-content: space-between; align-items: center;">
+            <span><?php echo $palabra; ?></span>
+            <button type="button" class="btn-voz" style="padding: 4px 8px; font-size: 11px; margin-top: 0;" onclick="hablarTexto('<?php echo addslashes($palabra); ?>')">🔊</button>
         </div>
+    <?php endforeach; ?>
+</div>
         <button class="btn-voz" onclick="hablarTexto('<?php echo addslashes($actual['texto_palabras']); ?>')">
             🔊 Escuchar la Pronunciación de las 10 Palabras
         </button>
@@ -326,8 +329,11 @@ $actual = isset($modulos[$id_modulo]) ? $modulos[$id_modulo] : $modulos[1];
         <h3 style="color: #2b6cb0;">2. Las 10 Oraciones Cotidianas de Práctica</h3>
         <div style="font-size: 14px; line-height: 1.6;">
             <?php foreach($actual['oraciones'] as $oracion): ?>
-                <div><?php echo $oracion; ?></div>
-            <?php endforeach; ?>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span><?php echo $oracion; ?></span>
+        <button type="button" class="btn-voz btn-voz-oracion" style="padding: 4px 8px; font-size: 11px; margin-top: 0;" onclick="hablarTexto('<?php echo addslashes($oracion); ?>')">🔊</button>
+    </div>
+<?php endforeach; ?>
         </div>
         <button class="btn-voz btn-voz-oracion" onclick="hablarTexto('<?php echo addslashes($actual['texto_oraciones']); ?>')">
             🔊 Escuchar la Pronunciación de las 10 Oraciones
