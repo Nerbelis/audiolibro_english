@@ -249,8 +249,8 @@ $actual = isset($modulos[$id_modulo]) ? $modulos[$id_modulo] : $modulos[1];
         .box { background: #f8fafc; border-left: 5px solid #319795; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .box h3 { color: #319795; margin-top: 0; }
         .grid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px; margin-top: 10px; }
-        .list-item { background: #edf2f7; padding: 8px 12px; border-radius: 4px; }
-        .btn-voz { background-color: #319795; color: white; border: none; padding: 10px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 15px; font-size: 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); width: 100%; text-align: center; }
+        .list-item { background: #edf2f7; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .btn-voz { background-color: #319795; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 13px; }
         .btn-voz:hover { background-color: #2c7a7b; }
         .btn-voz-oracion { background-color: #2b6cb0; }
         .btn-voz-oracion:hover { background-color: #2c5282; }
