@@ -27,11 +27,36 @@ $res_mod = $stmt_mod->get_result()->fetch_assoc();
 $modulos_aprobados = $res_mod['total'];
 $stmt_mod->close();
 
+// Calcular el porcentaje de avance (10 módulos = 100%)
+$porcentaje = ($modulos_aprobados / 10) * 100;
+
+// Si no ha completado los 10 módulos, mostrar la vista con el porcentaje
 if ($modulos_aprobados < 10) {
-    echo "<script>
-            alert('Aún no cumples con el 100% de los módulos aprobados para emitir el certificado. Tienes ' + $modulos_aprobados + ' de 10 módulos.');
-            window.location.href = 'dashboard.php';
-          </script>";
+    ?>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Progreso del Certificado - Audiolibro English</title>
+        <style>
+            body { font-family: Arial, sans-serif; background-color: #1a202c; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+            .progreso-card { background: #2d3748; padding: 40px; border-radius: 12px; text-align: center; max-width: 500px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+            h2 { color: #f6ad55; }
+            .btn-volver { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #3182ce; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; }
+            .btn-volver:hover { background: #2b6cb0; }
+        </style>
+    </head>
+    <body>
+        <div class="progreso-card">
+            <h2>Certificado Bloqueado</h2>
+            <p>Aún no cumples con el 100% de los módulos requeridos para emitir tu certificado.</p>
+            <p><strong>Módulos aprobados:</strong> <?php echo $modulos_aprobados; ?> de 10</p>
+            <p><strong>Tu progreso actual es del:</strong> <?php echo $porcentaje; ?>%</p>
+            <a href="dashboard.php" class="btn-volver">Volver al Panel</a>
+        </div>
+    </body>
+    </html>
+    <?php
     exit();
 }
 // -------------------------------------
