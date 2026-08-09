@@ -20,7 +20,7 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
 $stmt->close();
-$stmt->close(); // Línea 17
+
 
 // --- PEGA LA VALIDACIÓN AQUÍ MISMO ---
 $stmt_mod = $conexion->prepare("SELECT COUNT(*) as total FROM accesos_modulos WHERE usuario_id = ? AND estado = 'aprobado'");
