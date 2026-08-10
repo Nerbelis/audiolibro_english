@@ -22,6 +22,7 @@ if (!$res_rol || $res_rol['es_admin'] != 1) {
     exit();
 }
 
+
 $mensaje_alerta = "";
 $tipo_alerta = "";
 
