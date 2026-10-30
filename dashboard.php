@@ -402,7 +402,10 @@ $lista_modulos = [
         El uso de este sistema es de carácter lúdico y de autoaprendizaje, quedando exento el desarrollador de cualquier responsabilidad sobre acreditaciones académicas o de dominio lingüístico. &copy; 2026.
     
     </p>
+<<<<<<< HEAD
     <a href="privacidad.php" style="color: #319795; text-decoration: none;">Términos y Privacidad</a>
+=======
+>>>>>>> f03d1d4dd3d53859c742270dc79d05937766b1a3
 </footer>
 </body>
 </html>

@@ -252,7 +252,10 @@ session_start();
         </p>
 
     </div>
+<<<<<<< HEAD
     <a href="privacidad.php" style="color: #63b3ed; text-decoration: none; font-weight: bold;">Términos y Privacidad</a>
+=======
+>>>>>>> f03d1d4dd3d53859c742270dc79d05937766b1a3
 </footer>
 <script>
     // 1. Deshabilitar el clic derecho

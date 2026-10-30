@@ -217,6 +217,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     </script>
+<<<<<<< HEAD
   <footer style="text-align: center; margin-top: 40px; padding: 20px; font-size: 13px; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.2);">
             <p style="margin: 0 0 5px 0; color: #ffffff;">Audiolibro English &copy; 2026 | Todos los derechos reservados.</p>
             <p style="margin: 0 0 10px 0; color: #cbd5e0;">Plataforma desarrollada por la Ingeniera Civil e Informática Nerbelis Valdeblanques.</p>
@@ -224,3 +225,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </footer>
 </body>
 </html>
+=======
+
+</body>
+</html>
+>>>>>>> f03d1d4dd3d53859c742270dc79d05937766b1a3

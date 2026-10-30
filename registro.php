@@ -207,7 +207,10 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
                 <strong>Nota legal / Exoneración de responsabilidad:</strong> Los certificados emitidos por esta plataforma tienen un carácter estrictamente formativo y de constancia interna de avance. No constituyen títulos académicos oficiales ni avales de acreditación educativa formal institucional, quedando los creadores exonerados de cualquier responsabilidad legal al respecto.
             </p>
         </div>
+<<<<<<< HEAD
         <a href="privacidad.php" style="color: #319795; text-decoration: none;">Términos y Privacidad</a>
+=======
+>>>>>>> f03d1d4dd3d53859c742270dc79d05937766b1a3
     </footer>
 
     <script>
@@ -220,6 +223,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
         }
     }
     </script>
+<<<<<<< HEAD
     
+=======
+>>>>>>> f03d1d4dd3d53859c742270dc79d05937766b1a3
 </body>
 </html>
